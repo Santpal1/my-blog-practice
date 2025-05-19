@@ -1,2 +1,1 @@
-# my-blog-practice
-Case Study 1 Excercise
+For setup instructions, see the [Installation Guide](https://github.com/Santpal1/my-blog-practice/wiki/Installation).
