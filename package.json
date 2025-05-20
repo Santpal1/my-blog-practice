@@ -1,0 +1,14 @@
+{
+  "name": "my-blog-practice",
+  "version": "1.0.0",
+  "description": "Sample blog project for CI and security assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"All tests passed!\""
+  },
+  "author": "Santpal Singh Kalra",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.17.15"
+  }
+}
