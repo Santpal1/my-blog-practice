@@ -1,15 +1,24 @@
-name: Auto-Tag Release
+name: Release
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
+permissions:
+  contents: write  # 👈 This is required to push tags!
 
 jobs:
-  tag:
+  release:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Auto tag version
-        uses: Klemensas/action-autotag@stable
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: GitHub Tag Action
+        uses: anothrNick/github-tag-action@v1.64.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 👈 Required for tag pushing
+          DEFAULT_BUMP: patch                        # patch | minor | major
+          WITH_V: true                               # results in v1.0.1 tag
